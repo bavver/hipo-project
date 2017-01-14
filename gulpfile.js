@@ -44,7 +44,7 @@ const paths = {
   static: [
     `${root}/index.html`,
     `${root}/fonts/**/*`,
-    `${root}/img/**/*`
+    `${root}/image/**/*`
   ]
 };
 
@@ -57,14 +57,14 @@ gulp.task('cleanDocs', cb => del(paths.distDocs + '**/**/*', cb));
 gulp.task('templates', () => {
   return gulp.src(paths.templates)
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(templateCache({
-      root: 'app',
-      standalone: true,
-      transformUrl: function (url) {
-        return url.replace(path.dirname(url), '.');
-      }
-    }))
-    .pipe(gulp.dest('./'));
+    // .pipe(templateCache({
+    //   root: 'app',
+    //   standalone: true,
+    //   transformUrl: function (url) {
+    //     return url.replace(path.dirname(url), '.');
+    //   }
+    // }))
+    .pipe(gulp.dest(paths.dist + '/'));
 });
 
 gulp.task('modules', ['templates'], () => {
