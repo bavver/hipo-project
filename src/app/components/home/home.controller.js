@@ -1,7 +1,6 @@
 function HomeController(){
-    var vm = this;
+    var vm = this;  
 }
-
 
 angular
   .module('root')

@@ -1,6 +1,9 @@
 var result = {
   templateUrl: 'components/result/result.html',
-  controller: 'ResultController'
+  controller: 'ResultController',
+  bindings: {
+    $transition$: '<'
+  }
 };
 
 angular
