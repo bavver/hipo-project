@@ -1,19 +1,20 @@
 <div class="hpResultBG">
     <div class="container">
         <div class="row">
-        <div class="col-md-3 col-sm-4">
+        <div class="col-md-3 col-sm-3 col-xs-3">
             <img src="image/logo2.png" />
         </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-3 col-sm-3">
+        <!--<div class="col-md-1 col-sm-1 col-xs-1"></div>-->
+        <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-0">
             <input type="text" ng-model="$ctrl.keyword" class="hpResultKeyword input-lg form-control"/>
         </div>
-        <div class="col-md-2 col-sm-3">
+        <div class="col-md-2 col-sm-3 col-xs-3">
             <input type="text" ng-model="$ctrl.location" class="hpResultPlace input-lg form-control"/>
         </div>
-        <div class="col-md-1 col-sm-2">
-            <a ng-href="/#!/result?location={{$ctrl.location}}&keyword={{$ctrl.keyword}}" ng-click="$ctrl.reload()" class="btn btn-danger btn-xs  hpResultButton"><img src="image/shape.png"/> </a>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <a ng-href="/#!/result?location={{$ctrl.location}}&keyword={{$ctrl.keyword}}" ng-click="$ctrl.reload()" class="btn btn-danger btn-xs  hpResultButton"><img src="image/shape.png" class="img-responsive"/> </a>
         </div>
+       
         </div>
     </div>
 </div>
@@ -22,13 +23,19 @@
     <div class="row">
 
          <!--START !!!!! list of places !!!!! START -->
-        <div class="col-md-8">
-            <div class="row">
+        <div class="col-md-7 col-sm-7 col-xs-7">
+           
 
-                <div ng-repeat="place in $ctrl.places | limitTo:10" class="col-md-5">
-                    <div class="coffee">
+<!--beginning of ng-repeat-->
+
+                <div ng-repeat="place in $ctrl.places | limitTo:10" class="col-md-5 coffee col-sm-5 col-xs-5">
+                   
                         <h5 class="NameOfCafe">{{place.venue.name}}</h5>
-                        <img src="image/line.png" class="Line" /> <br>
+                     
+                     
+                        <img src="image/line.png" class="Line" />
+                     
+                     
                         <img src="image/icon-user.png" class="IconUser" />
                         <p class="UserCount">{{place.venue.stats.usersCount}}</p>
                        <div class="rectangleList">
@@ -39,36 +46,36 @@
                             <img src="image/rectangle3.png" class="rectangles"/>
                             <img src="image/rectangle4.png" class="rectangles"/>
                         </div>
-                        <div>
+                      
                             <img src="image/rectangle5.png" class="triangle" />
                             <p class="level">{{place.venue.rating}}</p>
-                        </div>
-                    </div>
+                      
                 </div>
                
-
-            </div>
+<!--end of ng repeat-->
         </div>
         <!--END !!!!! list of places !!!!! END -->
 
 
-        <div class="col-md-4">
+        <div class="col-md-5 col-sm-5 col-xs-5">
             <div class="side">
-                <p class="sideHeader">RECENT SEARCHES</p>
+                <h6 class="sideHeader">RECENT SEARCHES</h6>
                 <div class="sideLine"></div>
                 <div ng-click="$ctrl.reload()" ng-repeat="search in $ctrl.recents | limitTo:-10" class="sideList"><a ng-href="/#!/result?location={{search.location}}&keyword={{search.keyword}}" class="sideListItem">{{search.keyword}} in {{search.location}}</a></div>                              
             </div>
         </div>
     </div>
     <div class="row hpResultBorder">
-  <div class="col-md-5"></div>
-<div class="col-md-4">
-<div class="hpFooterGroup">
+ <div class="container">
+<div class="col-md-4 col-sm-4"></div>
+<div class="col-md-4 col-centered col-sm-4">
+<!--<div class="hpFooterGroup">-->
 
-	<a href="#" class="listitem">About Us</a>
+	<a href="#" class="listitem1">About Us</a>
 	<a href="#" class="listitem">Contact</a>
 	<a href="#" class="listitem">Blog</a>
 
+<!--</div>-->
 </div>
 </div>
     </div>
